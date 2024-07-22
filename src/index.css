@@ -1,0 +1,167 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+  line-height: 1.5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+@font-face {
+  font-family: "Montserrat-regular";
+  src: url("assets/fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-medium";
+  src: url("assets/fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-bold";
+  src: url("assets/fonts/Montserrat-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-semibold";
+  src: url("assets/fonts/Montserrat-SemiBold.ttf");
+}
+
+body {
+  font-family: "Montserrat-medium";
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+/* Estilo personalizado para el contenedor del select */
+.select-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Estilo personalizado para el select */
+.custom-select {
+  padding: 0.5rem 2rem 0.5rem 1rem;
+  /* Ajusta el padding según sea necesario */
+  cursor: pointer;
+  appearance: none;
+  font-size: 12px !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  letter-spacing: 0.1em;
+  font-family: "Montserrat-bold";
+}
+
+/* Estilo personalizado para el icono de la flecha */
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  /* Ajusta el margen derecho según sea necesario */
+  transform: translateY(-50%);
+  /* Cambia el color según sea necesario */
+}
+
+
+
+
+.dot-pulse {
+  position: relative;
+  left: -9999px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: white;
+  color: white;
+  box-shadow: 9999px 0 0 -5px;
+  animation: dot-pulse 1.5s infinite linear;
+  animation-delay: 0.25s;
+
+}
+
+.dot-pulse.primary {
+  color: #7354D3 !important;
+  background-color: #7354D3 !important;
+}
+
+.dot-pulse::before,
+.dot-pulse::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: white;
+  color: white;
+}
+
+.dot-pulse.primary::before,
+.dot-pulse.primary::after {
+  color: #7354D3 !important;
+  background-color: #7354D3 !important;
+}
+
+.dot-pulse::before {
+  box-shadow: 9984px 0 0 -5px;
+  animation: dot-pulse-before 1.5s infinite linear;
+  animation-delay: 0s;
+}
+
+.dot-pulse::after {
+  box-shadow: 10014px 0 0 -5px;
+  animation: dot-pulse-after 1.5s infinite linear;
+  animation-delay: 0.5s;
+}
+
+@keyframes dot-pulse-before {
+  0% {
+    box-shadow: 9984px 0 0 -5px;
+  }
+
+  30% {
+    box-shadow: 9984px 0 0 2px;
+  }
+
+  60%,
+  100% {
+    box-shadow: 9984px 0 0 -5px;
+  }
+}
+
+@keyframes dot-pulse {
+  0% {
+    box-shadow: 9999px 0 0 -5px;
+  }
+
+  30% {
+    box-shadow: 9999px 0 0 2px;
+  }
+
+  60%,
+  100% {
+    box-shadow: 9999px 0 0 -5px;
+  }
+}
+
+@keyframes dot-pulse-after {
+  0% {
+    box-shadow: 10014px 0 0 -5px;
+  }
+
+  30% {
+    box-shadow: 10014px 0 0 2px;
+  }
+
+  60%,
+  100% {
+    box-shadow: 10014px 0 0 -5px;
+  }
+}
